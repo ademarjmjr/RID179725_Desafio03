@@ -36,34 +36,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function addTaskToList(description, tag, date, completed) {
         const listItem = document.createElement("li");
-        
+
         const descriptionInput = document.createElement("input");
         descriptionInput.type = "text";
         descriptionInput.value = description;
         descriptionInput.readOnly = true;
         descriptionInput.style.textDecoration = completed ? "line-through" : "none";
 
+        const containerDiv = document.createElement("div"); // Cria a div encapsuladora
+        containerDiv.className = "task-container"; // Classe para estilo opcional
+
         const tagSpan = document.createElement("span");
-        tagSpan.textContent = ` | ${tag} - criado em ${date}`;
+        tagSpan.textContent = `  ${tag} `;
+
+        const tagDiv = document.createElement("div");
+        tagDiv.textContent = `  - Criado em ${date}`;
 
         const completeButton = document.createElement("button");
         completeButton.className = "complete-task-btn";
-        completeButton.innerHTML = completed ? "✔️" : "Concluir";
-        completeButton.style.color = completed ? "green" : "inherit";
+        completeButton.innerHTML = completed
+            ? `<svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16.5" r="16" fill="#00D8A7"/>
+                <path d="M10.6667 17.1667L14 20.5L21.3334 13.1667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>`
+            : "Concluir";
+        completeButton.style.border = "none";
+        completeButton.style.background = " none";
         completeButton.addEventListener("click", function () {
             descriptionInput.style.textDecoration = completed ? "none" : "line-through";
-            completeButton.innerHTML = completed ? "Concluir" : "✔️";
-            completeButton.style.color = completed ? "inherit" : "green";
+            completeButton.innerHTML = completed
+                ? "Concluir"
+                : `<svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16.5" r="16" fill="#00D8A7"/>
+                    <path d="M10.6667 17.1667L14 20.5L21.3334 13.1667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>`;
             completed = !completed;
 
             updateTaskInLocalStorage(description, completed);
             updateCompletedTaskCounter();
         });
 
+        containerDiv.appendChild(tagSpan);
+        containerDiv.appendChild(tagDiv);
+        containerDiv.appendChild(completeButton);
+
         listItem.appendChild(descriptionInput);
-        listItem.appendChild(tagSpan);
-        listItem.appendChild(completeButton);
+        listItem.appendChild(containerDiv);
+
         todoList.appendChild(listItem);
+
+        if (completed) {
+            descriptionInput.style.textDecoration = "line-through";
+            completeButton.innerHTML = `<svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16.5" r="16" fill="#00D8A7"/>
+                <path d="M10.6667 17.1667L14 20.5L21.3334 13.1667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>`;
+            completeButton.style.color = "green";
+        }
     }
 
     function updateTaskInLocalStorage(description, completed) {
