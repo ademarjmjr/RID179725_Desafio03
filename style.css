@@ -1,11 +1,11 @@
 html {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 body {
     width: 100%;
-    height: 100%;
+    height: auto;
     background: #F5F9FF;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body {
 
 main {
     width: 50%;
-    min-height: 70vh;
+    height: auto;;
     border-radius: 16px;
     padding-top: 24px;
     padding-right: 32px;
@@ -42,6 +42,7 @@ h1 {
     height: 12%;
     margin: 0;
     padding: 0;
+    margin-bottom: 5%;
 }
 
 .create-todo-form {
@@ -53,7 +54,7 @@ h1 {
     gap: 60px;
 }
 
-input {
+#create-todo-form > input {
     width: 36.5%;/* 254.5px;*/
     height: auto;
     font-family: "Rubik";
@@ -71,6 +72,7 @@ input {
     margin-right: 2%;
     border: 1px solid #EEEEEE;
 
+
 }
 
 /*botão de criar tarefas!*/
@@ -87,55 +89,111 @@ input {
 }
 
 .todo-list-section {
-    background-color: #2D70FD;
     width: 100%;
     height: auto;
+    gap: 8px; 
+    border: none;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    & > ul {
-        width: 100%;
-        height: auto;
-        border-radius: 16px;
-        padding-top: 24px;
-        padding-right: 32px;
-        padding-bottom: 24px;
-        padding-left: 32px;
-        gap: 8px;
-        top: 20px;
-        left: 20px;
-        border-width: 1px;
+#todo-list {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
 
-    }
+#todo-list > li {
+    width: 87%;
+    height: 4rem;
+    list-style-type: none;
+    border: 1px solid #EEEEEE;
+    border-radius: 16px;
+    padding-top: 24px;
+    padding-right: 32px;
+    padding-bottom: 24px;
+    padding-left: 32px;
+    gap: 8px;
+    border-width: 1px;
+    margin-bottom: 2%;
+}
 
-    & > ul > li {
-        list-style-type: none;
-        padding: 0.8rem 1.6rem;
-        font-size: 1.6rem;
-        background-color: #FFFFFF;
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        margin-bottom: 0.8rem;
-        width: 393px;
-        height: 55px;
-        gap: 16px;
+#todo-list > li > input {
+    width: 100%;
+    border: none;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 1%;
+    color: #001747;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-    }
+.task-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter";
+}
+span{ 
+    width: 67;
+    height: 21;
+    border-radius: 16px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    gap: 10px;
+    border-width: 1px;
+    border: 1px solid #B1BACB;
+    color: #B1BACB;
+}
+.task-container > div {
+    color: #B1BACB;
+}
 
-    & >ul>li>button:last-child {
-        margin: 0;
-    }
+.task-container > button > .complete-task-btn {
+    color: #FFFFFF;
+}
 
-    & > ul > li > button {
-        width: 2.4rem;
-        height: 2.4rem;
-        background-color: #e64c3c;
-        color: #fff;
-        border: none;
-        border-radius: 0.4rem;
-        cursor: pointer;
-    }
-   
-    button:hover {
-        background: #da5c3e;
-    } 
+.complete-task-btn {
+    font-size: 18px;
+    float: right;
+    width: 121px;
+    height: 44px;
+    border-radius: 4px;
+    padding-top: 12px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    gap: 8px;
+    border-width: 1px;
+    background: #2D70FD;
+    border: 1px solid #2D70FD
+}
+
+.complete-task-btn.completed {
+    color: green;
+    background: none;
+}
+
+#todo-footer {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#completed-task-counter {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 1%;
+    color: #B1BACB;
 }
