@@ -63,35 +63,35 @@ h1 {
     font-size: 1rem;
     line-height: 110.00000000000001%;
     letter-spacing: 1%;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     border-width: 1px;
-    padding-top: 16px;
-    padding-right: 24px;
-    padding-bottom: 16px;
-    padding-left: 24px;
+    padding-top: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
     margin-right: 2%;
     border: 1px solid #EEEEEE;
-
 
 }
 
 /*botão de criar tarefas!*/
 #save-task {
-    width: 45px;
-    height: 45px;
-    border-radius: 4px;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.25rem;
     border-width: 1px;
-    padding: 16px;
     background: #2D70FD;
     border: 1px solid #2D70FD;
     cursor: pointer;
-
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 .todo-list-section {
     width: 100%;
     height: auto;
-    gap: 8px; 
+    gap: 0.5rem; 
     border: none;   
     display: flex;
     justify-content: center;
@@ -142,8 +142,6 @@ h1 {
     font-family: "Inter";
 }
 span{ 
-    width: 67;
-    height: 21;
     border-radius: 16px;
     padding-top: 4px;
     padding-right: 8px;
@@ -158,42 +156,31 @@ span{
     color: #B1BACB;
 }
 
-.complete-task-btn {
-    color: #FFFFFF;
-}
-
-.complete-task-btn {
-    font-size: 18px;
-    float: right;
-    width: 121px;
-    height: 44px;
-    border-radius: 4px;
-    padding-top: 12px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    padding-left: 24px;
-    gap: 8px;
+#border {
+    margin-top: 2%;
+    width: 96.6%;
+    /*angle: -0 deg;*/
     border-width: 1px;
-    background: #2D70FD;
-    border: 1px solid #2D70FD
-}
-
-.complete-task-btn.completed {
-    color: green;
-    background: none;
+    border: 1px solid #EEEEEE
+    
 }
 
 #todo-footer {
-    width: 100%;
+    width: 96.6%;
     display: flex;
     justify-content: end;
+    margin-top: 1.8%;
 }
 
 #completed-task-counter {
     font-family: "Inter";
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 110.00000000000001%;
     letter-spacing: 1%;
+    color: #B1BACB;
+}
+
+::placeholder {
     color: #B1BACB;
 }
