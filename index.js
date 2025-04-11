@@ -36,44 +36,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function addTaskToList(description, tag, date, completed) {
         const listItem = document.createElement("li");
-
+    
+        const containerDiv = document.createElement("div");
+        containerDiv.className = "task-container";
+    
         const descriptionInput = document.createElement("input");
         descriptionInput.type = "text";
         descriptionInput.value = description;
         descriptionInput.readOnly = true;
         descriptionInput.style.textDecoration = completed ? "line-through" : "none";
-
-        const containerDiv = document.createElement("div");
-        containerDiv.className = "task-container";
-
+    
+        const segundaDiv = document.createElement("div");
+        segundaDiv.className = "segunda-div";
+    
         const tagSpan = document.createElement("span");
         tagSpan.textContent = `  ${tag} `;
-
+    
         const tagDiv = document.createElement("div");
-        tagDiv.textContent = `  - Criado em ${date}`;
-
+        tagDiv.textContent = `   Criado em ${date}`;
+    
+        segundaDiv.appendChild(tagSpan);
+        segundaDiv.appendChild(tagDiv);
+    
         const completeButton = document.createElement("button");
         completeButton.className = "complete-task-btn";
         updateButtonStyle(completeButton, completed);
-
+    
         completeButton.addEventListener("click", function () {
             completed = !completed;
-
+    
             descriptionInput.style.textDecoration = completed ? "line-through" : "none";
             updateButtonStyle(completeButton, completed);
-
+    
             updateTaskInLocalStorage(description, completed);
             updateCompletedTaskCounter();
         });
-
-        containerDiv.appendChild(tagSpan);
-        containerDiv.appendChild(tagDiv);
-        containerDiv.appendChild(completeButton);
-
-        listItem.appendChild(descriptionInput);
-        listItem.appendChild(containerDiv);
-
-        todoList.appendChild(listItem);
+    
+        containerDiv.appendChild(descriptionInput); 
+        containerDiv.appendChild(segundaDiv); 
+    
+        listItem.appendChild(containerDiv); 
+        listItem.appendChild(completeButton); 
+    
+        todoList.appendChild(listItem); 
     }
 
     function updateButtonStyle(button, completed) {
@@ -88,17 +93,17 @@ document.addEventListener("DOMContentLoaded", function () {
             button.style.background = "none";
         } else {
             button.innerHTML = "Concluir";
-            button.style.width = "7.5rem"; // Ajuste proporcional
+            button.style.width = "7.5rem"; 
             button.style.height = "2.75rem";
-            button.style.border = "0.0625rem solid #2D70FD"; // Borda com rem
-            button.style.borderRadius = "0.25rem"; // Arredondamento com rem
+            button.style.border = "0.0625rem solid #2D70FD"; 
+            button.style.borderRadius = "0.25rem"; 
             button.style.background = "#2D70FD";
             button.style.color = "#FFFFFF";
             button.style.fontFamily = "Inter";
             button.style.fontWeight = "500";
-            button.style.fontSize = "1.125rem"; // Fonte responsiva
+            button.style.fontSize = "1.125rem"; 
             button.style.textAlign = "center";
-            button.style.padding = "0.75rem 1.5rem"; // Ajuste proporcional no padding
+            button.style.padding = "0.75rem 1.5rem"; 
         }
     }
     
