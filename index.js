@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         descriptionInput.value = description;
         descriptionInput.readOnly = true;
         descriptionInput.style.textDecoration = completed ? "line-through" : "none";
+        descriptionInput.style.color = completed ? "#B1BACB" : "#001747";
     
         const segundaDiv = document.createElement("div");
         segundaDiv.className = "segunda-div";
@@ -57,10 +58,15 @@ document.addEventListener("DOMContentLoaded", function () {
     
         segundaDiv.appendChild(tagSpan);
         segundaDiv.appendChild(tagDiv);
+
+        const divCentralizar = document.createElement("div");
+        divCentralizar.className = "divCentralizar";
     
         const completeButton = document.createElement("button");
         completeButton.className = "complete-task-btn";
         updateButtonStyle(completeButton, completed);
+
+        divCentralizar.appendChild(completeButton);
     
         completeButton.addEventListener("click", function () {
             completed = !completed;
@@ -76,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         containerDiv.appendChild(segundaDiv); 
     
         listItem.appendChild(containerDiv); 
-        listItem.appendChild(completeButton); 
+        listItem.appendChild(divCentralizar); 
     
         todoList.appendChild(listItem); 
     }
@@ -103,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.style.fontWeight = "500";
             button.style.fontSize = "1.125rem"; 
             button.style.textAlign = "center";
-            button.style.padding = "0.75rem 1.5rem"; 
+            button.style.padding = "0.75rem .8rem"; 
         }
     }
     
@@ -121,4 +127,3 @@ document.addEventListener("DOMContentLoaded", function () {
         completedTaskCounter.textContent = `${completedTasks} tarefa(s) concluída(s)`;
     }
 });
-
