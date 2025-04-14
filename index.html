@@ -15,38 +15,41 @@
 </head>
 <body>
     <main>
-        <h1>Board de tarefas</h1>
-        <section id="create-todo-section">
-            <form id="create-todo-form">
-                <input 
-                    type="text"
-                    id="description"
-                    name="description"
-                    class="input-description"
-                    aria-label="Nome da tarefa?"
-                    placeholder="Nome da tarefa?"
-                />
-                <input 
-                    type="text"
-                    id="tag"
-                    name="tag"
-                    class="input-tag"
-                    aria-label="Etiqueta"
-                    placeholder="Etiqueta"
-                />
-                <button type="submit" id="save-task" class="add-task-btn">+</button>
-            </form>
-        </section>
+        <section class="centralize-main">
+            <h1>Board de tarefas</h1>
+            <section id="create-todo-section">
+                <form id="create-todo-form">
+                    <input 
+                        type="text"
+                        id="description"
+                        name="description"
+                        class="input-description"
+                        aria-label="Nome da tarefa?"
+                        placeholder="Nome da tarefa?"
+                    />
+                    <input 
+                        type="text"
+                        id="tag"
+                        name="tag"
+                        class="input-tag"
+                        aria-label="Etiqueta"
+                        placeholder="Etiqueta"
+                    />
+                    <button type="submit" id="save-task" class="add-task-btn">+</button>
+                </form>
+            </section>
 
-        <section class="todo-list-section">
-            <ul id="todo-list">
-                
-            </ul>
+            <section class="todo-list-section">
+                <ul id="todo-list">
+                    
+                </ul>
+            </section>
+            <section id="border"></section>
+            <footer id="todo-footer">
+                <p id="completed-task-counter">0 tarefa(s) concluída(s)</p>
+            </footer>
         </section>
-        <section id="border"></section>
-        <footer id="todo-footer">
-            <p id="completed-task-counter">0 tarefa(s) concluída(s)</p>
-        </footer>
+        
     </main>
 
 </body>
