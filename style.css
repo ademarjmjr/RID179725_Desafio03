@@ -31,7 +31,7 @@ main {
 h1 {
     font-family: "Rubik";
     font-weight: 600;
-    font-size: 40px;
+    font-size: 2.5rem;
     line-height: 100%;
     letter-spacing: 1%;
     color: #11175E;
@@ -108,12 +108,12 @@ h1 {
     height: 4rem;
     list-style-type: none;
     border: 1px solid #EEEEEE;
-    border-radius: 16px;
-    padding-top: 24px;
-    padding-right: 32px;
-    padding-bottom: 24px;
-    padding-left: 32px;
-    gap: 8px;
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    gap: 0.5rem;
     border-width: 1px;
     margin-bottom: 2%;
     display: flex;
@@ -132,7 +132,7 @@ h1 {
     border: none;
     font-family: Inter;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 110.00000000000001%;
     letter-spacing: 1%;
     color: #001747;
@@ -141,12 +141,12 @@ h1 {
     align-items: center;
 }
 span{ 
-    border-radius: 16px;
-    padding-top: 4px;
-    padding-right: 8px;
-    padding-bottom: 4px;
-    padding-left: 8px;
-    gap: 10px;
+    border-radius: 1rem;
+    padding-top: 0.25rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    gap: 0.63rem;
     border-width: 1px;
     border: 1px solid #B1BACB;
     color: #B1BACB;
@@ -177,7 +177,6 @@ div {
 #border {
     margin-top: 2%;
     width: 99%;
-    /*angle: -0 deg;*/
     border-width: 1px;
     border: 1px solid #EEEEEE
     
@@ -218,7 +217,7 @@ div {
     main > h1 {
         font-family: "Rubik";
         font-weight: 600;
-        font-size: 32px;
+        font-size: 2rem;
         line-height: 100%;
         letter-spacing: 1%;
 
@@ -239,12 +238,12 @@ div {
         width: 90%;
         margin-bottom: 1rem;
         height: auto;
-        gap: 10px;
-        border-radius: 8px;
-        padding-top: 16px;
-        padding-right: 24px;
-        padding-bottom: 16px;
-        padding-left: 24px;
+        gap: 0.63rem;
+        border-radius: 0.5rem;
+        padding-top: 11rem;
+        padding-right: 1.5rem;
+        padding-bottom: 1rem;
+        padding-left: 1.5rem;
         border-width: 1px;
         font-size: 1rem;
     }
