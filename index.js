@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             completed = !completed;
     
             descriptionInput.style.textDecoration = completed ? "line-through" : "none";
+            descriptionInput.style.color = completed ? "#B1BACB" : "#001747";
             updateButtonStyle(completeButton, completed);
     
             updateTaskInLocalStorage(description, completed);
